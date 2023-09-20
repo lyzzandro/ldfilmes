@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Filme from "./components/filme";
+
+const listFilm = new Array(10).fill({
+  background:
+    "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/177685208/poster-os-vingadores-guerra-infinita-b-8210dc20.jpg",
+  title: "Marvel",
+});
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {listFilm.map((item, index) => {
+        return <Filme key={index} {...item} />;
+      })}
     </div>
   );
 }
